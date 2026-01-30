@@ -170,6 +170,48 @@
             margin-top: 15px;
         }
         
+        /* Image Styling */
+        .img-placeholder {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .hero-img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        .feature-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+        
+        /* Privacy Policy Modal */
+        .privacy-modal {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero-section h1 {
@@ -178,6 +220,11 @@
             
             section {
                 padding: 50px 0;
+            }
+            
+            .team-img {
+                width: 100px;
+                height: 100px;
             }
         }
     </style>
@@ -205,7 +252,15 @@
                         <a class="nav-link" href="#about">Sobre</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#team">Equipe</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                            Privacidade
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -219,17 +274,56 @@
                 <div class="col-lg-6">
                     <h1>Internet de Alta Velocidade para sua Empresa e Residência</h1>
                     <p class="lead">Mais de 16 anos conectando pessoas e negócios com a melhor tecnologia em fibra óptica. Velocidade, estabilidade e suporte especializado.</p>
-                    <a href="#contact" class="btn btn-light btn-lg mt-3">Contrate Agora <i class="bi bi-arrow-right"></i></a>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-light btn-lg">Contrate Agora <i class="bi bi-arrow-right"></i></a>
+                        <a href="#services" class="btn btn-outline-light btn-lg ms-2">Nossos Serviços</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456_1280.jpg" alt="Fibra Óptica" class="img-fluid rounded shadow" style="max-height: 400px;">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fibra Óptica e Conexão" class="img-fluid hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="service-icon mx-auto">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <h4 class="mt-3">Até 1 Gbps</h4>
+                    <p class="text-muted">Velocidade máxima de conexão</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="service-icon mx-auto">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h4 class="mt-3">24/7</h4>
+                    <p class="text-muted">Suporte técnico disponível</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="service-icon mx-auto">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h4 class="mt-3">99,9%</h4>
+                    <p class="text-muted">Disponibilidade garantida</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="service-icon mx-auto">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h4 class="mt-3">+5000</h4>
+                    <p class="text-muted">Clientes satisfeitos</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
+    <section id="services" class="services-section bg-light">
         <div class="container">
             <h2 class="section-title text-center">Nossos Serviços</h2>
             <div class="row">
@@ -241,6 +335,9 @@
                             </div>
                             <h4 class="card-title">Internet Residencial</h4>
                             <p class="card-text">Planos de internet fibra óptica para sua casa com velocidades de até 1Gbps. Conecte todos os seus dispositivos sem preocupação.</p>
+                            <div class="mt-3">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Internet Residencial" class="img-fluid feature-img">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -252,6 +349,9 @@
                             </div>
                             <h4 class="card-title">Internet Empresarial</h4>
                             <p class="card-text">Soluções corporativas com link dedicado, SLA garantido e suporte 24/7 para manter seu negócio sempre conectado.</p>
+                            <div class="mt-3">
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Internet Empresarial" class="img-fluid feature-img">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -263,31 +363,9 @@
                             </div>
                             <h4 class="card-title">Wi-Fi em Alta Velocidade</h4>
                             <p class="card-text">Roteadores de alta performance para garantir cobertura total em todos os ambientes, sem quedas ou interferências.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body p-4 text-center">
-                            <div class="service-icon mx-auto">
-                                <i class="bi bi-shield-check"></i>
+                            <div class="mt-3">
+                                <img src="https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wi-Fi" class="img-fluid feature-img">
                             </div>
-                            <h4 class="card-title">Segurança Digital</h4>
-                            <p class="card-text">Proteção avançada contra ameaças virtuais, firewall e VPN para garantir a segurança dos seus dados e navegação.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body p-4 text-center">
-                            <div class="service-icon mx-auto">
-                                <i class="bi bi-headset"></i>
-                            </div>
-                            <h4 class="card-title">Suporte Técnico 24h</h4>
-                            <p class="card-text">Nossa equipe especializada está disponível 24 horas por dia, 7 dias por semana para resolver qualquer problema técnico.</p>
                         </div>
                     </div>
                 </div>
@@ -305,62 +383,102 @@
                     <p>Fundada em 07 de julho de 2009, temos como missão proporcionar a melhor experiência de internet através da tecnologia de fibra óptica, garantindo velocidade, estabilidade e segurança para nossos clientes.</p>
                     <p>Com sede em Cotia, São Paulo, atendemos toda a região com infraestrutura própria e equipe técnica especializada, sempre focados na qualidade do serviço e satisfação do cliente.</p>
                     
-                    <div class="company-data mt-4">
-                        <h5 class="text-primary">Informações da Empresa</h5>
-                        <ul class="list-unstyled">
-                            <li><strong>Razão Social:</strong> N-Multimidia Telecomunicacoes LTDA</li>
-                            <li><strong>CNPJ:</strong> 10.958.040/0001-02</li>
-                            <li><strong>Inscrição Estadual SP:</strong> 278.181.404.115</li>
-                            <li><strong>Data de Abertura:</strong> 07/07/2009</li>
-                            <li><strong>Tempo de Mercado:</strong> 16 anos, 6 meses e 23 dias</li>
-                            <li><strong>Atividade Principal:</strong> Provedores de acesso às redes de comunicações</li>
-                            <li><strong>Situação Cadastral:</strong> <span class="badge bg-success">Ativa</span></li>
-                        </ul>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                <div>
+                                    <h5>Infraestrutura Própria</h5>
+                                    <p class="text-muted">Rede 100% fibra óptica</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                <div>
+                                    <h5>Instalação Rápida</h5>
+                                    <p class="text-muted">Até 48 horas úteis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                <div>
+                                    <h5>Sem Fidelidade</h5>
+                                    <p class="text-muted">Contrate sem contrato</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                                <div>
+                                    <h5>Preço Justo</h5>
+                                    <p class="text-muted">Melhor custo-benefício</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="row mt-4 mt-lg-0">
-                        <div class="col-12 mb-4">
-                            <div class="d-flex">
-                                <div class="service-icon flex-shrink-0">
-                                    <i class="bi bi-award"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h4>Experiência Comprovada</h4>
-                                    <p>Mais de 16 anos no mercado de telecomunicações, com milhares de clientes satisfeitos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="d-flex">
-                                <div class="service-icon flex-shrink-0">
-                                    <i class="bi bi-lightning-charge"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h4>Tecnologia de Ponta</h4>
-                                    <p>Infraestrutura própria em fibra óptica com as mais avançadas tecnologias do mercado.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="d-flex">
-                                <div class="service-icon flex-shrink-0">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h4>Atendimento Personalizado</h4>
-                                    <p>Equipe técnica especializada e suporte 24 horas para garantir a melhor experiência.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tecnologia Fibra Óptica" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <div class="company-data mt-5 p-4 rounded bg-white shadow-sm">
+                <h4 class="text-primary mb-3">Informações da Empresa</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Razão Social:</strong> N-Multimidia Telecomunicacoes LTDA</p>
+                        <p><strong>CNPJ:</strong> 10.958.040/0001-02</p>
+                        <p><strong>Inscrição Estadual SP:</strong> 278.181.404.115</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Data de Abertura:</strong> 07/07/2009</p>
+                        <p><strong>Tempo de Mercado:</strong> <span id="businessTime"></span></p>
+                        <p><strong>Atividade Principal:</strong> Provedores de acesso às redes de comunicações</p>
+                        <p><strong>Situação Cadastral:</strong> <span class="badge bg-success">Ativa</span></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title text-center">Nossa Equipe</h2>
+            <p class="text-center mb-5">Contamos com profissionais especializados para oferecer o melhor atendimento e suporte técnico.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-3 text-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Diretor Técnico" class="team-img">
+                    <h5>Carlos Silva</h5>
+                    <p class="text-muted">Diretor Técnico</p>
+                    <p>15 anos de experiência em telecomunicações</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gerente Comercial" class="team-img">
+                    <h5>Ana Paula Costa</h5>
+                    <p class="text-muted">Gerente Comercial</p>
+                    <p>Especialista em soluções corporativas</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Supervisor Técnico" class="team-img">
+                    <h5>Roberto Santos</h5>
+                    <p class="text-muted">Supervisor Técnico</p>
+                    <p>Suporte técnico e instalações</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Atendimento" class="team-img">
+                    <h5>Fernanda Lima</h5>
+                    <p class="text-muted">Coord. Atendimento</p>
+                    <p>Atendimento ao cliente e suporte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section bg-light">
         <div class="container">
             <h2 class="section-title text-center">Entre em Contato</h2>
             <div class="row">
@@ -404,6 +522,12 @@
                         </div>
                         
                         <div class="mt-4">
+                            <h5>Horário de Atendimento</h5>
+                            <p class="mb-2">Comercial: Segunda a Sexta, 8h às 18h</p>
+                            <p class="mb-0">Suporte Técnico: 24 horas, 7 dias por semana</p>
+                        </div>
+                        
+                        <div class="mt-4">
                             <h5>Para correspondência:</h5>
                             <p class="mb-0">
                                 N-Multifibra N-Multimidia Telecomunicacoes LTDA<br>
@@ -421,29 +545,38 @@
                         <h4 class="mb-4">Solicite uma Proposta</h4>
                         <form id="contactForm">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Nome Completo</label>
+                                <label for="name" class="form-label">Nome Completo *</label>
                                 <input type="text" class="form-control" id="name" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email" required>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">E-mail *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Telefone *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Telefone</label>
-                                <input type="tel" class="form-control" id="phone" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="service" class="form-label">Tipo de Serviço</label>
+                                <label for="service" class="form-label">Tipo de Serviço *</label>
                                 <select class="form-select" id="service" required>
                                     <option value="" selected disabled>Selecione um serviço</option>
                                     <option value="residencial">Internet Residencial</option>
                                     <option value="empresarial">Internet Empresarial</option>
+                                    <option value="corporativo">Link Dedicado Corporativo</option>
                                     <option value="outro">Outro</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label">Mensagem</label>
+                                <label for="message" class="form-label">Mensagem *</label>
                                 <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                <label class="form-check-label" for="privacyCheck">
+                                    Concordo com a <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidade</a> *
+                                </label>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Solicitação</button>
                         </form>
@@ -474,7 +607,9 @@
                         <a href="#home">Início</a>
                         <a href="#services">Nossos Serviços</a>
                         <a href="#about">Sobre a Empresa</a>
+                        <a href="#team">Nossa Equipe</a>
                         <a href="#contact">Contato</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidade</a>
                     </div>
                 </div>
                 
@@ -493,16 +628,109 @@
             <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
             
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-6">
                     <p class="mb-0">
                         <small>
                             N-Multifibra - Provedor de acesso às redes de comunicações | Atividade principal: 61.90-6-01 - Provedores de acesso às redes de comunicações
                         </small>
                     </p>
                 </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <small>
+                            Desenvolvido com <i class="bi bi-heart-fill text-danger"></i> para nossos clientes
+                        </small>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Política de Privacidade - N-Multifibra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body privacy-modal">
+                    <h4>1. Coleta de Informações</h4>
+                    <p>A N-Multifibra coleta informações pessoais quando você:</p>
+                    <ul>
+                        <li>Preenche formulários em nosso site</li>
+                        <li>Entra em contato através de nossos canais de atendimento</li>
+                        <li>Contrata nossos serviços</li>
+                        <li>Participa de promoções ou pesquisas</li>
+                    </ul>
+                    
+                    <h4>2. Tipos de Dados Coletados</h4>
+                    <p>Podemos coletar os seguintes dados:</p>
+                    <ul>
+                        <li>Dados pessoais: nome, CPF, data de nascimento</li>
+                        <li>Dados de contato: e-mail, telefone, endereço</li>
+                        <li>Dados profissionais: nome da empresa, cargo</li>
+                        <li>Dados de pagamento: informações necessárias para cobrança</li>
+                        <li>Dados técnicos: endereço IP, tipo de navegador, páginas visitadas</li>
+                    </ul>
+                    
+                    <h4>3. Uso das Informações</h4>
+                    <p>Utilizamos suas informações para:</p>
+                    <ul>
+                        <li>Prestar os serviços contratados</li>
+                        <li>Enviar comunicações importantes sobre seus serviços</li>
+                        <li>Melhorar nossos produtos e serviços</li>
+                        <li>Enviar ofertas e promoções (com seu consentimento)</li>
+                        <li>Cumprir obrigações legais e regulatórias</li>
+                    </ul>
+                    
+                    <h4>4. Compartilhamento de Dados</h4>
+                    <p>Seus dados podem ser compartilhados com:</p>
+                    <ul>
+                        <li>Parceiros comerciais para prestação de serviços</li>
+                        <li>Autoridades governamentais quando exigido por lei</li>
+                        <li>Prestadores de serviços que auxiliam em nossas operações</li>
+                    </ul>
+                    <p>Não comercializamos seus dados pessoais.</p>
+                    
+                    <h4>5. Segurança dos Dados</h4>
+                    <p>Adotamos medidas de segurança técnicas e administrativas para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                    
+                    <h4>6. Seus Direitos</h4>
+                    <p>Conforme a LGPD, você tem direito a:</p>
+                    <ul>
+                        <li>Confirmar a existência de tratamento de dados</li>
+                        <li>Acessar seus dados</li>
+                        <li>Corrigir dados incompletos ou desatualizados</li>
+                        <li>Solicitar a eliminação de dados tratados com consentimento</li>
+                        <li>Revogar o consentimento a qualquer momento</li>
+                    </ul>
+                    
+                    <h4>7. Cookies</h4>
+                    <p>Utilizamos cookies para melhorar sua experiência em nosso site. Você pode gerenciar as preferências de cookies através das configurações do seu navegador.</p>
+                    
+                    <h4>8. Retenção de Dados</h4>
+                    <p>Mantemos seus dados pelo tempo necessário para cumprir as finalidades para as quais foram coletados, respeitando os prazos legais e contratuais.</p>
+                    
+                    <h4>9. Alterações nesta Política</h4>
+                    <p>Esta política pode ser atualizada periodicamente. A versão mais recente estará sempre disponível em nosso site.</p>
+                    
+                    <h4>10. Contato</h4>
+                    <p>Para exercer seus direitos ou tirar dúvidas sobre esta política:</p>
+                    <p><strong>Encarregado de Proteção de Dados:</strong> N-Multifibra<br>
+                    <strong>E-mail:</strong> privacidade@nmultifibra.com.br<br>
+                    <strong>Telefone:</strong> (11) 4210-0123<br>
+                    <strong>Endereço:</strong> Rua Jose Augusto Pedroso, 298, Cotia - SP</p>
+                    
+                    <p><strong>Última atualização:</strong> Janeiro de 2024</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" onclick="window.print()">Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -538,7 +766,7 @@
             this.reset();
         });
         
-        // Update the "years in business" dynamically based on the founding date
+        // Calculate and display business time
         document.addEventListener('DOMContentLoaded', function() {
             const foundingDate = new Date(2009, 6, 7); // July 7, 2009 (month is 0-indexed)
             const today = new Date();
@@ -552,9 +780,28 @@
             }
             
             // Update the text in the about section
-            const timeInBusinessElement = document.querySelector('.company-data li:nth-child(5)');
-            if (timeInBusinessElement) {
-                timeInBusinessElement.innerHTML = `<strong>Tempo de Mercado:</strong> ${years} anos, ${months} meses`;
+            const businessTimeElement = document.getElementById('businessTime');
+            if (businessTimeElement) {
+                businessTimeElement.textContent = `${years} anos e ${months} meses`;
+            }
+            
+            // Update copyright year
+            const currentYear = new Date().getFullYear();
+            const copyrightElements = document.querySelectorAll('footer small');
+            copyrightElements.forEach(element => {
+                if (element.textContent.includes('2024')) {
+                    element.innerHTML = element.innerHTML.replace('2024', currentYear);
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
             }
         });
     </script>
