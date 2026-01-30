@@ -1,1 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Multifibra - Provedor de Internet de Alta Velocidade</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #2196f3;
+            --accent-color: #00bcd4;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4caf50;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Section Spacing */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Services */
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(13, 71, 161, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        /* About */
+        .about-section {
+            background-color: #f8f9fa;
+        }
+        
+        /* Contact */
+        .contact-info {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(33, 150, 243, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-icon i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-title {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .company-data {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h3 class="fw-bold text-primary mb-0">N-Multifibra</h3>
+                <small class="text-muted">Provedor de Internet</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Internet de Alta Velocidade para sua Empresa e Residência</h1>
+                    <p class="lead">Mais de 16 anos conectando pessoas e negócios com a melhor tecnologia em fibra óptica. Velocidade, estabilidade e suporte especializado.</p>
+                    <a href="#contact" class="btn btn-light btn-lg mt-3">Contrate Agora <i class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn.pixabay.com/photo/2020/02/03/00/12/fiber-4814456_1280.jpg" alt="Fibra Óptica" class="img-fluid rounded shadow" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title text-center">Nossos Serviços</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="service-icon mx-auto">
+                                <i class="bi bi-house-door-fill"></i>
+                            </div>
+                            <h4 class="card-title">Internet Residencial</h4>
+                            <p class="card-text">Planos de internet fibra óptica para sua casa com velocidades de até 1Gbps. Conecte todos os seus dispositivos sem preocupação.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="service-icon mx-auto">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <h4 class="card-title">Internet Empresarial</h4>
+                            <p class="card-text">Soluções corporativas com link dedicado, SLA garantido e suporte 24/7 para manter seu negócio sempre conectado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="service-icon mx-auto">
+                                <i class="bi bi-wifi"></i>
+                            </div>
+                            <h4 class="card-title">Wi-Fi em Alta Velocidade</h4>
+                            <p class="card-text">Roteadores de alta performance para garantir cobertura total em todos os ambientes, sem quedas ou interferências.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="service-icon mx-auto">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h4 class="card-title">Segurança Digital</h4>
+                            <p class="card-text">Proteção avançada contra ameaças virtuais, firewall e VPN para garantir a segurança dos seus dados e navegação.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="service-icon mx-auto">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <h4 class="card-title">Suporte Técnico 24h</h4>
+                            <p class="card-text">Nossa equipe especializada está disponível 24 horas por dia, 7 dias por semana para resolver qualquer problema técnico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre a N-Multifibra</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="lead">A <strong>N-Multifibra</strong> é uma empresa com mais de 16 anos de experiência no mercado de telecomunicações, oferecendo soluções de conectividade de alta performance para residências e empresas.</p>
+                    <p>Fundada em 07 de julho de 2009, temos como missão proporcionar a melhor experiência de internet através da tecnologia de fibra óptica, garantindo velocidade, estabilidade e segurança para nossos clientes.</p>
+                    <p>Com sede em Cotia, São Paulo, atendemos toda a região com infraestrutura própria e equipe técnica especializada, sempre focados na qualidade do serviço e satisfação do cliente.</p>
+                    
+                    <div class="company-data mt-4">
+                        <h5 class="text-primary">Informações da Empresa</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>Razão Social:</strong> N-Multimidia Telecomunicacoes LTDA</li>
+                            <li><strong>CNPJ:</strong> 10.958.040/0001-02</li>
+                            <li><strong>Inscrição Estadual SP:</strong> 278.181.404.115</li>
+                            <li><strong>Data de Abertura:</strong> 07/07/2009</li>
+                            <li><strong>Tempo de Mercado:</strong> 16 anos, 6 meses e 23 dias</li>
+                            <li><strong>Atividade Principal:</strong> Provedores de acesso às redes de comunicações</li>
+                            <li><strong>Situação Cadastral:</strong> <span class="badge bg-success">Ativa</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row mt-4 mt-lg-0">
+                        <div class="col-12 mb-4">
+                            <div class="d-flex">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="bi bi-award"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4>Experiência Comprovada</h4>
+                                    <p>Mais de 16 anos no mercado de telecomunicações, com milhares de clientes satisfeitos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class="d-flex">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4>Tecnologia de Ponta</h4>
+                                    <p>Infraestrutura própria em fibra óptica com as mais avançadas tecnologias do mercado.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class="d-flex">
+                                <div class="service-icon flex-shrink-0">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4>Atendimento Personalizado</h4>
+                                    <p>Equipe técnica especializada e suporte 24 horas para garantir a melhor experiência.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title text-center">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="contact-info h-100">
+                        <h4 class="mb-4">Informações de Contato</h4>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon flex-shrink-0">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Localização</h5>
+                                <p>
+                                    Rua Jose Augusto Pedroso, 298<br>
+                                    Vila Sao Francisco de Assis<br>
+                                    Cotia - SP<br>
+                                    CEP: 06717-126
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon flex-shrink-0">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <h5>Telefone</h5>
+                                <p><a href="tel:1142100123" class="text-decoration-none">(11) 4210-0123</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon flex-shrink-0">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>E-mail</h5>
+                                <p><a href="mailto:financeiro@nmultifibra.com.br" class="text-decoration-none">financeiro@nmultifibra.com.br</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Para correspondência:</h5>
+                            <p class="mb-0">
+                                N-Multifibra N-Multimidia Telecomunicacoes LTDA<br>
+                                Rua Jose Augusto Pedroso 298<br>
+                                Vila Sao Francisco de Assis<br>
+                                Cotia SP<br>
+                                06717-126
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-info h-100">
+                        <h4 class="mb-4">Solicite uma Proposta</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Tipo de Serviço</label>
+                                <select class="form-select" id="service" required>
+                                    <option value="" selected disabled>Selecione um serviço</option>
+                                    <option value="residencial">Internet Residencial</option>
+                                    <option value="empresarial">Internet Empresarial</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Solicitação</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">N-Multifibra</h4>
+                    <p>Provedor de internet de alta velocidade com mais de 16 anos de experiência no mercado. Conectando pessoas e negócios com tecnologia de ponta em fibra óptica.</p>
+                    <div class="d-flex mt-4">
+                        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="#home">Início</a>
+                        <a href="#services">Nossos Serviços</a>
+                        <a href="#about">Sobre a Empresa</a>
+                        <a href="#contact">Contato</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Informações Legais</h4>
+                    <div class="company-data">
+                        <p class="mb-1"><strong>CNPJ:</strong> 10.958.040/0001-02</p>
+                        <p class="mb-1"><strong>IE:</strong> 278.181.404.115</p>
+                        <p class="mb-1"><strong>Razão Social:</strong> N-Multimidia Telecomunicacoes LTDA</p>
+                        <p class="mb-1"><strong>Nome Fantasia:</strong> N-Multifibra</p>
+                        <p class="mb-0"><small>© 2024 N-Multifibra. Todos os direitos reservados.</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">
+                        <small>
+                            N-Multifibra - Provedor de acesso às redes de comunicações | Atividade principal: 61.90-6-01 - Provedores de acesso às redes de comunicações
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server here
+            // For this example, we'll just show an alert
+            alert('Obrigado! Sua solicitação foi enviada com sucesso. Entraremos em contato em breve.');
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Update the "years in business" dynamically based on the founding date
+        document.addEventListener('DOMContentLoaded', function() {
+            const foundingDate = new Date(2009, 6, 7); // July 7, 2009 (month is 0-indexed)
+            const today = new Date();
+            
+            let years = today.getFullYear() - foundingDate.getFullYear();
+            let months = today.getMonth() - foundingDate.getMonth();
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            // Update the text in the about section
+            const timeInBusinessElement = document.querySelector('.company-data li:nth-child(5)');
+            if (timeInBusinessElement) {
+                timeInBusinessElement.innerHTML = `<strong>Tempo de Mercado:</strong> ${years} anos, ${months} meses`;
+            }
+        });
+    </script>
+</body>
+</html>
